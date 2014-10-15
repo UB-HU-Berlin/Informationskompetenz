@@ -24,3 +24,80 @@ Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten
 ------------------------------------------------
 Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde.
 Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt
+
+HERAUSGEBER
+===========
+
+Hochschule der Medien Stuttgart (HdM) 
+Studiengang Bibliotheks- und Informationsmanagement / 
+Studiengang Informationsdesign 
+Nobelstraße 10 
+70569 Stuttgart
+
+in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompetenz Berlin/Brandenburg (NIK-BB)
+
+Humboldt-Universität zu Berlin, Universitätsbibliothek
+Freie Universität Berlin, Universitätsbibliothek und Philologische Bibliothek
+Technische Universität Berlin, Universitätsbibliothek
+Staatsbibliothek zu Berlin, Preussischer Kulturbesitz
+Zentral- und Landesbibliothek Berlin
+Universität Potsdam, Universitätsbibliothek
+Fachhochschule Potsdam, Bibliothek
+Stadt-und Landesbibliothek im Bildungsforum Potsdam
+
+Verantwortlich
+--------------
+Carla Freise 
+Freie Universität Berlin, Philologische Bibliothek 
+E-Mail: carla.freise@fu-berlin.de
+
+Ronald Gohr 
+Stadt-und Landesbibliothek im Bildungsforum Potsdam 
+E-Mail: gohr@bibliothek.potsdam.de
+
+Prof. Dr. Roland Mangold 
+Professor für Informations- und Kommunikationspsychologie 
+E-Mail: mangold@hdm-stuttgart.de
+
+Ute Mousa 
+Humboldt-Universität zu Berlin, Universitätsbibliothek 
+E-Mail: ute.mousa@hu-berlin.de
+
+Marion Pohl 
+Freie Universität Berlin, Universitätsbibliothek 
+E-Mail: pohl@ub.fu-berlin.de
+
+Prof. Ingeborg Simon 
+Professorin für Informationsdienstleistungen und Teaching Library 
+E-Mail: simon@hdm-stuttgart.de
+
+Armin Talke 
+Staatsbibliothek zu Berlin, Preußischer Kulturbesitz 
+E-Mail: Armin.Talke@sbb.spk-berlin.de
+
+Jana Viehweger 
+Zentral-und Landesbibliothek Berlin 
+E-Mail: viehweger@zlb.de
+
+Katharina Violet 
+Fachschule Potsdam, Bibliothek 
+E-Mail: violet@fh-potsdam.de
+
+Kathrin Agethen 
+Universität Potsdam, Universitätsbibliothek 
+E-Mail: infonp3@uni-potsdam.de
+
+### Konzeption
+
+Netzwerk Informationskompetenz Berlin/Brandenburg (NIK-BB), 
+Arbeitsgruppe Schüler in Zusammenarbeit mit den Studiengängen 
+Bibliotheks- und Informationsmanagement und Informationsdesign, 
+Hochschule der Medien Stuttgart (HdM)
+
+### Texte
+
+Nicole Dobner, Jana Eckert, Vera Gaugel, Marie-Luise Hammer, Julia Gabriele Hillesheim, Alina Hirschfeld, Maria Klimm, Franziska Helgard Tschofen, Lisa Wiedenhöfer
+
+### Gestaltung und Umsetzung
+
+Ann-Kathrin Bauer, Christiane Knöpfler, Larissa Fischinger, Merle Giebeler, Patrick Lang, Rania Nabie, Sandra Leber, Stefanie Dworschak, Toni Georg Michel, Vera Wagner
