@@ -42,47 +42,65 @@ in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompe
 
 ## Verantwortlich
 
--     Carla Freise,
+- **Carla Freise**
 
     Freie Universität Berlin, Philologische Bibliothek
 
     E-Mail: carla.freise@fu-berlin.de
 
--     Ronald Gohr,
+- **Ronald Gohr**
+
       Stadt-und Landesbibliothek im Bildungsforum Potsdam
+
       E-Mail: gohr@bibliothek.potsdam.de
 
-Prof. Dr. Roland Mangold 
-Professor für Informations- und Kommunikationspsychologie 
-E-Mail: mangold@hdm-stuttgart.de
+- **Prof. Dr. Roland Mangold**
 
-Ute Mousa 
-Humboldt-Universität zu Berlin, Universitätsbibliothek 
-E-Mail: ute.mousa@hu-berlin.de
+      Professor für Informations- und Kommunikationspsychologie 
 
-Marion Pohl 
-Freie Universität Berlin, Universitätsbibliothek 
-E-Mail: pohl@ub.fu-berlin.de
+      E-Mail: mangold@hdm-stuttgart.de
 
-Prof. Ingeborg Simon 
-Professorin für Informationsdienstleistungen und Teaching Library 
-E-Mail: simon@hdm-stuttgart.de
+- **Ute Mousa**
 
-Armin Talke 
-Staatsbibliothek zu Berlin, Preußischer Kulturbesitz 
-E-Mail: Armin.Talke@sbb.spk-berlin.de
+      Humboldt-Universität zu Berlin, Universitätsbibliothek 
 
-Jana Viehweger 
-Zentral-und Landesbibliothek Berlin 
-E-Mail: viehweger@zlb.de
+      E-Mail: ute.mousa@hu-berlin.de
 
-Katharina Violet 
-Fachschule Potsdam, Bibliothek 
-E-Mail: violet@fh-potsdam.de
+- **Marion Pohl**
 
-Kathrin Agethen 
-Universität Potsdam, Universitätsbibliothek 
-E-Mail: infonp3@uni-potsdam.de
+      Freie Universität Berlin, Universitätsbibliothek 
+
+      E-Mail: pohl@ub.fu-berlin.de
+
+- **Prof. Ingeborg Simon**
+
+      Professorin für Informationsdienstleistungen und Teaching Library 
+
+      E-Mail: simon@hdm-stuttgart.de
+
+- **Armin Talke**
+
+      Staatsbibliothek zu Berlin, Preußischer Kulturbesitz 
+
+      E-Mail: Armin.Talke@sbb.spk-berlin.de
+
+- **Jana Viehweger**
+
+      Zentral-und Landesbibliothek Berlin 
+
+      E-Mail: viehweger@zlb.de
+
+- **Katharina Violet**
+
+      Fachschule Potsdam, Bibliothek 
+
+      E-Mail: violet@fh-potsdam.de
+
+- **Kathrin Agethen**
+
+      Universität Potsdam, Universitätsbibliothek 
+
+      E-Mail: infonp3@uni-potsdam.de
 
 ### Konzeption
 
