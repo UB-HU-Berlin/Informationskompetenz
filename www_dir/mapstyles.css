@@ -1,0 +1,32 @@
+#karte {
+	position: absolute;
+}
+
+#gelb, #orange , #lila, #petrol, #blau, #violett {
+	position: absolute;
+	display: none;
+}
+
+ul.legende{
+	list-style-type:none;
+	width: 20em;
+}
+
+.legende li {
+	margin-bottom: 0.5em;
+	cursor: pointer; 
+}
+
+.legende img {
+width: 15px;
+vertical-align: top;
+}
+
+ul.aufklappmenu{
+	list-style-type:none;
+	display: none;
+}
+
+.pinsGross {
+	display: none;
+}

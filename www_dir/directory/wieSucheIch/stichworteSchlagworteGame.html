@@ -1,0 +1,247 @@
+
+<div class="pagewrapper">
+	<h2> Thematische Suche mit Stichworten oder Schlagworten </h2>
+	<p> Eine thematische Recherche ist sowohl mit (Titel-) Stichworten als auch mit Schlagworten möglich. </p>
+    <p> Was die beiden Begriffe bedeuten und was sie voneinander unterscheidet, können Sie in folgender Übung herausfinden: </p>
+    
+    <script>
+	function sortListGame () {}
+	
+	sortListGame.init = function () {
+		/*
+		 $(function() {
+   			 $( "#original-list-0, #schlagwort-list-1, #stichwort-list-2" ).sortable({
+      connectWith: ".connected-list"
+    }).disableSelection();
+  });
+	*/
+		$("#original-list-0, #schlagwort-list-1, #stichwort-list-2")
+				.sortable({
+					connectWith: ".connected-list",
+					start: sortListGame.resetPos
+				})
+				.disableSelection();
+		
+		sortListGame.lists.push(document.getElementById("original-list-0"));
+		sortListGame.lists.push(document.getElementById("schlagwort-list-1"));		
+		sortListGame.lists.push(document.getElementById("stichwort-list-2"));
+		
+		$("#checkBtn").click( function () {
+			sortListGame.checkPositions();
+		});	
+		
+		$("#solveBtn").click(sortListGame.solveGame);
+		$("#resetBtn").click(sortListGame.resetGame);
+	}
+	
+	sortListGame.getAllItems = function () {
+		var listItems = new Array();
+		var _item; 
+		for(var i = 0; i < sortListGame.lists.length; i++) {
+			_item = sortListGame.lists[i];
+//			console.log("Item: "+_item);
+			for(var x = 0; x < sortListGame.lists[i].getElementsByTagName("li").length; x++ ){
+				listItems.push(_item.getElementsByTagName("li")[x]);	
+			}
+		}	
+		return listItems;
+	}
+	
+	sortListGame.solveGame = function () {
+		// Alle Listen-Items sammeln
+		var listItems = sortListGame.getAllItems();
+	
+		// Durch jedes Liste-Item laufen
+		for(var y = 0; y<listItems.length; y++) {
+			// Jedes Listen-Item der entsprechenden Liste hinzufügen
+			if(listItems[y].value == 1) {
+				$(sortListGame.lists[1]).append(listItems[y]);
+			} else if (listItems[y].value == 2) {
+				$(sortListGame.lists[2]).append(listItems[y]);
+			}
+		}
+		sortListGame.resetPos();
+		sortListGame.checkPositions();
+	}
+	
+	sortListGame.resetGame = function () {
+		var listItems = sortListGame.getAllItems();
+
+		// Durch jedes Liste-Item laufen
+		for(var y = 0; y<listItems.length; y++) {
+			$(sortListGame.lists[0]).append(listItems[y]);
+		}
+		sortListGame.resetPos();
+	}
+	
+	sortListGame.resetPos = function () {
+		$("li").removeClass("correct").removeClass("wrong");
+	}
+	
+	sortListGame.lists = new Array();
+	
+	sortListGame.checkPositions = function () {
+		var lists = sortListGame.lists;
+		for(var i = 0; i < lists.length; i++) {
+			sortListGame.runThroughItems(lists[i]);
+		}
+	}
+	
+	sortListGame.runThroughItems  = function ( list )  {
+//		console.log($(list).attr("id"));
+		
+		var listID = list.id.substr(list.id.length-1, list.id.length);
+		
+		if(listID == 0) return;
+		
+		var items = list.getElementsByTagName("li");
+
+		for(var i = 0; i<items.length;i++){
+			if(items[i].value == listID) {
+				$(items[i]).addClass("correct");
+			} else {
+				$(items[i]).addClass("wrong");
+			}
+		}
+	
+	}
+	
+    </script>
+    <style>
+		
+		.connected-list {
+			list-style:none;
+			min-height:3em;
+			padding:0;
+			margin:0;
+		}
+		
+		.connected-list li{
+			border:thin black solid;
+			cursor:pointer;
+			background-color:white;
+			max-width:20em;
+			padding:.5em 1em;
+			margin-left:0em;
+			transition:background-color .5s, color .5s;
+			box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+		}
+		
+		.connected-list li.wrong {
+			background-color:rgba(255,0,0,.7);
+color:white;
+			text-decoration:line-through;
+			box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);
+			
+		}
+		
+		.connected-list li.correct {
+			background-color:rgba(0,150,0,.5);
+			color:white;		
+			box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);
+		}
+		
+		#checkTable {
+			min-width:50em;
+			max-width:55%;
+			border-collapse:collapse;
+		}
+		
+		#checkTable td {
+			width:50%;
+			padding:1em 2em;
+		}
+		
+		#checkTable ul {
+			border:thin black solid;
+			padding:1em;
+		}
+
+		.control-btn {
+			-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+			box-shadow:inset 0px 1px 0px 0px #ffffff;
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+			background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+			background-color:#ededed;
+			-webkit-border-top-left-radius:0px;
+			-moz-border-radius-topleft:0px;
+			border-top-left-radius:0px;
+			-webkit-border-top-right-radius:0px;
+			-moz-border-radius-topright:0px;
+			border-top-right-radius:0px;
+			-webkit-border-bottom-right-radius:0px;
+			-moz-border-radius-bottomright:0px;
+			border-bottom-right-radius:0px;
+			-webkit-border-bottom-left-radius:0px;
+			-moz-border-radius-bottomleft:0px;
+			border-bottom-left-radius:0px;
+			text-indent:0;
+			border:1px solid #dcdcdc;
+			display:inline-block;
+			color:#777777;
+			font-family:arial;
+			font-weight:bold;
+			font-style:normal;
+			height:3em;
+			line-height:2em;
+			width:7em;
+			text-decoration:none;
+			text-align:center;
+			text-shadow:1px 1px 0px #ffffff;
+			margin-top:1em;
+			cursor:pointer;
+		}
+		.control-btn:hover {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+			background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+			background-color:#dfdfdf;
+		}.control-btn:active {
+			position:relative;
+			top:1px;
+		}
+		
+		.connected-list ul{
+			margin-bottom:1em;
+		}
+	</style>
+	
+    
+	<ul id="original-list-0" class="connected-list">
+    	<li value="2">... steht in einem normierten Begriffsverzeichnis (Index)</li>
+    	<li value="1">... ist ein zufälliger Begriff, der im Titel einer Publikation steht</li>
+        <li value="2">... muss nicht im Dokument selbst vorkommen</li>
+        <li value="1">... hat die gleiche Sprache und sprachliche Form wie die Publikation</li>
+        <li value="2">... beschreibt den Inhalt einer Publikation</li>
+        <li value="2">... wird von Fachleuten vergeben</li>
+    </ul>
+    <br/>
+    <hr/>    
+    
+    <table id="checkTable">
+    	<tr>
+        	<th>Ein Schlagwort...</th>
+            <th>Ein (Titel-)stichwort...</th>
+        </tr>
+        <tr>
+        	<td>
+            	<ul id="stichwort-list-2" class="connected-list">
+                </ul>
+          	</td>	
+        	<td> 
+            	<ul id="schlagwort-list-1" class="connected-list">
+                </ul>
+            </td>
+        </tr>
+    </table>
+<hr/>
+
+    <input type="button" class="control-btn" id="checkBtn" value="Überprüfen"/>
+    <input type="button" class="control-btn" id="resetBtn" value="Zurücksetzen"/>
+    <input type="button" class="control-btn" id="solveBtn" value="Lösen"/>
+	<script>
+    	sortListGame.init();
+    </script>
+</div>

@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+#pop-up-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	//background-image:url(../img/noise2.png);
+	background-color:rgba(89,89,89,.7);
+	transition:opacity .5s;
+	z-index:9;
+}
+
+#pop-up {
+	margin:auto;
+	background-color:rgba(255,255,255,.95);
+	overflow:auto;
+	max-width:45em;
+	max-height:100%;
+	overflow:auto;
+	position:absolute;
+	
+	padding:1.5em 2em 2.5em 2em;
+
+	-webkit-box-shadow: 1px 0px 13px 3px rgba(0,0,0,0.3);
+	-moz-box-shadow: 1px 0px 13px 3px rgba(0,0,0,0.3);
+	box-shadow: 1px 0px 13px 3px rgba(0,0,0,0.3);
+	
+	opacity:.5;
+	
+	border: 4px rgba(0,0,0,.5) solid;
+
+	//border-radius: .3em;
+}
+
+#pop-up h3:after {
+	content:" ";
+	display:block;
+	height:2px;
+	background-color:rgba(0,0,0,.5);
+	position:relative;
+	width:100%;
+	margin-top:.5em;
+}
+
+
+@media (max-width: 30em), (max-height: 30em) {
+	body {
+		overflow:hidden;
+	}
+	#pop-up {
+
+		width:100%;
+		height:100%;
+		max-width:45em;
+		max-height:100%;
+	}
+}
+
+.popup-wrapper {
+	display:none;
+}

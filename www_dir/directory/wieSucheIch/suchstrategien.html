@@ -1,0 +1,155 @@
+<div class="pagewrapper">
+	<h2>Suchstrategien</h2>
+    <p> Mit bestimmten Suchstrategien können Sie noch gezielter recherchieren. </p>
+</div>
+
+<div class="pagewrapper">
+	<h3>Eingrenzung der Suche</h3>
+    <p> 
+    	In den meisten Bibliothekskatalogen kann mit der “Erweiterten Suche” 
+        die Recherche besser eingegrenzt werden. 
+        Hier die wichtigsten Möglichkeiten im Überblick:
+    </p>
+    <ul>
+    	<li> Medienart 
+        	<ul>
+            	<li> Buch, CD, Aufsatz, DVD, Zeitschrift </li>
+            </ul>    
+		</li>
+        <li> Sprache 
+        	<ul>
+            	<li> Deutsch, Englisch, Französisch </li>
+            </ul>    
+		</li>
+        <li> Jahr 
+        	<ul>
+            	<li> Bücher, die in einem bestimmten Zeitraum erschienen sind. 
+                	<table class="border-table regular">
+                    	<tr>
+                        	<th>Eingabe</th>
+                            <th>Ergebnis</th>
+                        </tr>
+                    	<tr>
+                    		<td> &lt;2006 - 2013&gt;</td>
+                            <td> Suche 2006 bis 2013 einschließlich </td>
+                        </tr>
+                        <tr>
+                    		<td> &lt;-1992&gt; </td>
+                            <td> Suche bis 1992 einschließlich </td>
+                    	</tr>
+                        <tr>
+                        	<td> &lt;198?&gt;</td>
+                            <td> Suche 1980 bis 1989 einschließlich</td>
+                    	</tr>
+                    </table>
+                </li>
+            </ul>    
+		</li>
+    </ul>
+    <p>
+    	<strong>Tipp:</strong> 
+    	Um für Sie relevante Treffer schneller zu finden, können Sie Ihre Ergebnislisten nach verschiedenen Merkmalen 
+        (Jahr, Titel, Medienart, ...) sortieren. 
+    </p>
+</div>
+
+<div class="pagewrapper">
+	<h3>Ausweitung der Suche mit Platzhaltern</h3>
+    <p>Wenn Sie nicht genau wissen, wie Ihr Suchbegriff grammatikalisch endet bzw. welche Wortzusammensetzungen möglich sind, können Ihnen sogenannte Platzhalter (<span class="glossar Trunkierung">“Trunkierung”</span>) helfen.</p>
+    <h4>Tipp: </h4>
+    <p>
+    	Meistens wird am Ende des Wortes das Sternchen und in der Mitte das Fragezeichen als Platzhalter verwendet. 
+        Welcher Platzhalter im Einzelfall zu verwenden ist, erfahren Sie über die Hilfefunktion des Kataloges oder der Datenbank.
+    </p>
+    <img width="600" src="Bilder/04/trunk.png"/>
+</div>
+
+<div class="pagewrapper">
+	<h3>Kombination der Suchbegriffe</h3>
+    <p>Sie haben in Ihren Trefferlisten viele Treffer, die Sie gar nicht benötigen? Dann sollten Sie für mehr Effektivität sorgen.</p>
+    <p>Die Boole´schen Operatoren UND, ODER und NICHT werden zwischen zwei Suchbegriffe gesetzt. Sie verknüpfen so die Themen miteinander oder Sie schließen Themengebiete aus.</p>
+    <span class="input-example">
+        Wirtschaft
+        <select id="bool-select">
+            <option></option>
+            <option>UND</option>
+            <option>ODER</option>
+            <option>NICHT</option>
+        </select>
+        Volkswirtschaft
+	</span>
+        <span class="bool-select hidden">
+            <p>Es werden alle Ergebnisse gefunden, die die Stich- oder Schlagworte Wirtschaft <strong>und</strong> Volkswirtschaft enthalten.</p>
+			<p><img width="400" src="Bilder/04/15_wirtschaft_volkswirtschaft-02.png"/></p>
+
+        </span>
+        <span class="bool-select hidden">
+            <p>Es werden alle Ergebnisse gefunden, die die Stich- oder Schlagwort Wirtschaft <strong>oder</strong> Volkswirtschaft enthalten.</p>
+            <p><img width="400" src="Bilder/04/15_wirtschaft_volkswirtschaft-01.png"/></p>
+            
+        </span>
+        <span class="bool-select hidden">
+            <p>Es werden alle Ergebnisse gefunden, die Wirtschaft als Stich- oder Schlagwort enthalten. „Volkswirtschaft“ darf <strong>nicht</strong> vorkommen.</p>
+			<p><img width="400" src="Bilder/04/15_wirtschaft_volkswirtschaft-03.png"/></p>
+                        
+        </span>
+
+    <h4>Tipp</h4> 
+    <p>Sowohl die meisten Online-Kataloge, als auch Google verwenden bei mehreren Suchbegriffen automatisch den Operator <strong>UND</strong>.</p>
+    <p>Der Operator <strong>ODER</strong> eignet sich besonders für Synonyme.</p>
+</div>
+<script>
+	function bool_fct (evt) {}
+	bool_fct.evt = function (evt) {
+		$("span.bool-select").addClass("hidden");
+		if(evt.currentTarget.selectedIndex > 0){
+			$("span.bool-select:eq(" + (parseInt(evt.currentTarget.selectedIndex)-1) +")").removeClass("hidden");
+		}
+	}
+	bool_fct.init = function (){
+		$("select#bool-select").on("change",this.evt);
+	}
+	bool_fct.init();
+</script>
+	
+<div class="pagewrapper">
+	<h3>Erweiterung und Präzisierung der Treffer</h3>
+	<p>Sie haben bereits mit Ihrer Suche begonnen, jedoch nicht das gefunden, wonach Sie gesucht haben.</p>
+    <ul>
+    	<li><a class="popup-link popup-1" href="">Haben Sie zu wenige Treffer erhalten?</a></li>
+    	<li><a class="popup-link popup-2" href="">Haben Sie zu viele Treffer erhalten?	</a></li>
+    	<li><a class="popup-link popup-3" href="">Sind Ihre Treffer qualitativ hochwertig?</a></li>
+</div>
+
+
+<div class="popup-1 popup-wrapper popup">
+	<h3>Tipps zur Erweiterung der Treffer</h3>
+	<ul>
+    	<li> Wurden die richtigen Suchbegriffe (Stichwörter, Schlagwörter) verwendet? Haben Sie ausreichend Synonyme, Ober-, Unter- und verwandte Begriffe verwendet? Mehr dazu finden Sie <a href="3" class="internal-link">hier</a>. </li>
+		<li> Verwenden Sie bei Bedarf <a class="internal-link" href="3_3">Platzhalter</a> </li> 
+		<li>
+        	 Haben Sie in allen relevanten Informationsquellen gesucht? 
+             Gibt es vielleicht noch Datenbanken, Virtuelle Fachbibliotheken oder Suchmaschinen, die Sie verwenden könnten? 
+             Mehr dazu <a href="2_3" class="internal-link">finden Sie hier.</a> 
+        </li> 	
+        <li> 
+        	Nutzen Sie das Schneeballsystem: Sehen Sie sich das Literaturverzeichnis der gefundenen Bücher und Aufsätze an. 
+            Welche Titel werden dort genannt? Könnten diese Quellen auch für Sie nützlich sein? 
+        </li>
+    </ul>    
+</div>
+
+<div class="popup-2 popup-wrapper popup">
+	<h3>Tipps zur Präzisierung der Treffer</h3>
+	<ul>
+    	<li>Sind die Suchbegriffe zu allgemein gehalten? Verwenden Sie <a href="3" class="internal-link">präzisere Suchbegriffe</a></li>
+		<li>Grenzen Sie Ihr Thema genauer ein. Mehr dazu finden Sie in <a href="0_1" class="internal-link">hier</a>. </li>
+		<li>Nutzen Sie die <a href="3_3" class="internal-link">Eingrenzungsmöglichkeiten</a> der Datenbank oder des Kataloges.</li>
+		<li>Verwenden Sie den <a href="3_3" class="internal-link">Boole´schen Operator</a> “NICHT”, um Themengebiete bei der Recherche auszugrenzen.</li>
+    </ul>
+</div>
+
+<div class="popup-3 popup-wrapper popup">
+	<h3>Tipps zur Überprüfung der Qualität Ihrer Treffer</h3>
+	<p>Sie können Ihre Treffer auch verringern, indem Sie sie auf Ihre Qualität hin untersuchen (Aktualität, Autor...). Mehr dazu finden Sie <a href="4" class="internal-link">hier</a>.</p>
+</div>

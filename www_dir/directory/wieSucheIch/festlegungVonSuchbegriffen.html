@@ -1,0 +1,227 @@
+<div class="pagewrapper">
+	<h2>Festlegen von Suchbegriffen</h2>
+    <p> 
+    	Sie haben bereits eine Vorstellung davon, um welches Thema es in Ihrer Hausarbeit gehen soll.
+		Nun brauchen Sie die passenden Suchbegriffe, um die entsprechende Literatur für die Ausarbeitung zu finden
+	</p>
+    
+    <h3>Beispiel</h3>
+    <p>
+		Ihr Thema lautet “Der Fischfang im Pazifik und die Aktivitäten von Umweltorganisationen vor Ort”.  
+		Dann ergeben sich daraus die möglichen Suchbegriffe <em>Fischfang</em>, <em>Pazifik</em> und <em>Umweltorganisation</em>
+    </p>
+    <p><strong>Merke:</strong> Passende Suchbegriffe sind die Voraussetzung für eine erfolgreiche Recherche.</p>
+</div>
+</div class="pagewrapper">
+	<h3>Alternative Suchbegriffe</h3>
+    
+    <p>
+	    Sie können zusätzlich zu den Begriffen aus dem Titel der Hausarbeit auch Synonyme, Ober- und Unterbegriffe als Suchwörter verwenden.
+	</p>
+    <p>
+    	Ein Synonym ist eine sinnverwandte Alternative zu Ihrem Suchbegriff. Damit erhöhen Sie bei der Suche die relevanten Treffer.
+    </p>
+    <p>
+	    Mit einem Oberbegriff erweitern Sie die Suche und mit einem Unterbegriff schränken Sie sie ein.
+    </p>
+	<p>
+		Je nach Thema ist es auch sinnvoll, mit Fachbegriffen oder englischen Begriffen zu suchen.    
+    </p>
+    
+    <h4>Tipp:</h4>
+    <p> 
+    	Für die schnelle Suche nach Alternativen zu Ihren Begriffen, 
+        finden Sie hier eine Liste mit 
+        <a href="" class="popup-link popup-1">hilfreichen Webadressen</a>.
+    </p>
+    <div class="popup popup-1 popup-wrapper">
+    	<h3>Hilfreiche Webadressen</h3>
+        <p>Im Internet finden Sie zahlreiche Seiten, die die Suche nach alternativen Begriffen erleichtern:</p>
+        <ul>
+        	<li><a class="external-link" href="http://www.semager.de/keywords">Semager</a> (u.a. Synonyme, Ober- und Unterbegriffe)</li>
+        	<li><a class="external-link" href="http://www.semager.de/keywords">Canoo</a> (u.a. Synonyme, Ober- und Unterbegriffe)</li>
+        	<li>
+            	<a class="external-link" href="http://www.dwds.de/">
+					Digitales Wörterbuch der deutschen Sprache
+            	</a>
+                	(u.a. Synonyme, Ober- und Unterbegriffe, Wortwolken, Links zu Artikeln der Wochenzeitung DIE ZEIT und ZEIT online)
+            </li>
+        	<li><a class="external-link" href="http://www.duden.de/keywords">Duden</a> (Synonyme)</li>
+        	<li><a class="external-link" href="http://wortschatz.uni-leipzig.de">Wortschaft</a> (u.a. Synonyme, Ober- und Unterbegriffe,verwandte Begriffe</a></li>
+            <li>
+            	<a class="external-link" href="http://de.wikipedia.org">Wikipedia</a>
+            </li>
+    	</ul>
+    </div>
+    
+    <style>
+		input {
+			margin-right:1em;
+		}
+		
+		label {
+			border: thin rgba(0,0,0,.4) solid;
+			display:block;
+			width:20em;
+			transition:background-color .5s, text-decoration .5s;
+			color:black;
+			padding:.3em .7em;
+			cursor:pointer;
+			background-color:white;
+			box-shadow: 1px 1px 1px rgba(0,0,0,.4);	
+			color:black;	
+		}
+		
+		label.true {
+			background-color:rgba(0,150,0,.5);
+			color:white;
+			text-decoration:none;
+			box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);	
+		}
+		
+		label.false {
+			color:white;
+			background-color:rgba(255,0,0,.7);
+text-decoration:line-through;
+			box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);	
+		}
+		
+		.explanation-box {
+			opacity:0;
+			max-height:0;
+			width:90%;
+			max-width:35em;
+			border:none;
+			padding:0;
+			background-color:none;
+			transition: max-height .5s, border .5s, background-color .5s, padding .5s, opacity 1s;
+		}
+		
+		.explanation-box.filled {
+			opacity:1;
+			max-height:5em;
+		}
+	</style>
+    <script>
+    
+	function festlegenVonSuchbegriffen () {}
+    
+	festlegenVonSuchbegriffen.init = function () {
+		this.setEvents();	
+	}
+	
+	festlegenVonSuchbegriffen.setEvents = function (){
+		$("input").on("change",this.checkAnswer);
+	}
+	
+	festlegenVonSuchbegriffen.formHandler;
+	
+	festlegenVonSuchbegriffen.shuffleUp = function ( obj ) {
+		var elem = obj;
+		if( elem.getElementsByTagName("p").length > 0 ) {
+			festlegenVonSuchbegriffen.formHandler = elem;
+			return
+		}
+		arguments.callee( elem.parentNode );
+	}
+		
+	festlegenVonSuchbegriffen.checkAnswer = function ( event ) {
+		var elem = event.currentTarget;
+		festlegenVonSuchbegriffen.shuffleUp( elem ); 
+		var form = festlegenVonSuchbegriffen.formHandler;
+		
+		// Auswahl zurücksetzen
+		$(form.getElementsByTagName("label")).removeClass("true").removeClass("false");
+		
+		var id = $(form).attr("name").substr($(form).attr("name").length-1,$(form).attr("name").length);
+		var elemId = elem.value;
+	
+		if(festlegenVonSuchbegriffen.content[id][elemId].type) {
+			$(elem).parent().addClass("true");
+			$(elem).parent().removeClass("false");
+		} else {
+			$(elem).parent().removeClass("true");
+			$(elem).parent().addClass("false");
+		}
+		
+		$(form).find(".explanation-box")
+			.html(festlegenVonSuchbegriffen.content[id][elemId].answer)
+			.addClass("filled");
+	}
+	
+	festlegenVonSuchbegriffen.content = {
+		0: {
+			0: {
+				"type":false,
+				"answer":"Fluggerät ist ein <strong>Oberbegriff</strong> von Hubschrauber. Versuchen Sie es noch einmal!",
+			},
+			1: {
+				"type":false,
+				"answer":"Luftfahrzeug ist ein <strong>Oberbegriff</strong> von Hubschrauber. Versuchen Sie es noch einmal!",
+			},
+			2: { 
+				"type":true,
+				"answer":"Das ist <strong>richtig</strong>!"
+			}
+		}, 
+		1: {
+			0: {
+				"type":false,
+				"answer":"Ministerin ist ein <strong>Synonym</strong> von Minister. Versuchen Sie es noch einmal!"
+			},
+			1: {
+				"type":false,
+				"answer":"Kulturminister ist ein <strong>Unterbegriff</strong> von Minister. Versuchen Sie es noch einmal!",
+			},
+			2: {
+				"type":true,
+				"answer":"Das ist <strong>richtig!</strong>"
+			}
+		},
+		2: {
+			0: {
+				"type":false,
+				"answer":"Camorra ist ein Synonym von <strong>Mafia</strong>. Versuchen Sie es noch einmal!"
+			},
+			1: {
+				"type":true,
+				"answer":"Das ist <strong>richtig</strong>!",
+			},
+			2: {
+				"type":false, 
+				"answer": "Kriminelle Vereinigung ist ein Oberbegriff von <strong>Mafia</strong>. Versuchen Sie es nochmal!"
+			}
+		}
+		
+	}
+    </script>
+    
+    <h3>Ordnen Sie den passenden Begriff zu</h3>
+    <!-- simple Checkboxen mit Auswertung -->
+    <p>Das passende <strong>Synonym</strong> von <strong>Hubschrauber</strong> ist:</p>
+    <form name="festlegenVonSuchbegriffen_0">
+    	<p><label><input type="radio" name="hubschrauber" value="0">Fluggerät</label></p>
+    	<p><label><input type="radio" name="hubschrauber" value="1">Luftfahrzeug</label></p>
+    	<p><label><input type="radio" name="hubschrauber" value="2">Helikopter</label></p>
+        <p class="explanation-box"></p>
+    </form>
+    <hr/>
+    <p>Der passenden <strong>Oberbegriff</strong> von <strong>Minister</strong> ist:</p>
+    <form name="festlegenVonSuchbegriffen_1">
+    	<p><label><input type="radio" name="minister" value="0">Ministerin</label></p>
+    	<p><label><input type="radio" name="minister" value="1">Kulturminister</label></p>
+    	<p><label><input type="radio" name="minister" value="2">Politiker</label></p>
+	    <p class="explanation-box"></p>
+    </form>
+    <hr/>
+    <p>Der passende <strong>Unterbegriff</strong> von <strong>Mafia</strong> ist:</p>
+    <form name="festlegenVonSuchbegriffen_2">
+    	<p><label><input type="radio" name="mafia" value="0">Camorra</label></p>
+    	<p><label><input type="radio" name="mafia" value="1">Drogenmafia</label></p>
+    	<p><label><input type="radio" name="mafia" value="2">Kriminelle Vereinigung</label></p>
+    	<p class="explanation-box"></p>
+    </form>
+    <script>
+		festlegenVonSuchbegriffen.init();
+	</script>
+</div>

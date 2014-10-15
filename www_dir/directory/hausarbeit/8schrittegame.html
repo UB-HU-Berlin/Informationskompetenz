@@ -1,0 +1,130 @@
+<h2>Die 8 Schritte verinnerlicht?</h2>
+<h4> Sortieren Sie die acht Schritte der Ausarbeitung in die richtige Reihenfolge.</h4> 
+<p>Viel Erfolg!</p>
+<style>
+	
+	#list {
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+
+	#list li {
+		border:thin black solid;
+		cursor:pointer;
+		background-color:white;
+		max-width:20em;
+		padding:.5em 1em;
+		margin-left:0em;
+		transition:background-color .5s, color .5s;
+		box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+	}
+	
+	#list li.correct {
+		background-color:rgba(0,150,0,.5);
+		color:white;
+		box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);		
+	}
+	
+	#list li.wrong {
+		background-color:rgba(255,0,0,.7);
+color:white;
+		text-decoration:line-through;
+		box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);		
+	}
+	
+	.control-btn {
+			-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+			box-shadow:inset 0px 1px 0px 0px #ffffff;
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+			background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+			background-color:#ededed;
+			-webkit-border-top-left-radius:0px;
+			-moz-border-radius-topleft:0px;
+			border-top-left-radius:0px;
+			-webkit-border-top-right-radius:0px;
+			-moz-border-radius-topright:0px;
+			border-top-right-radius:0px;
+			-webkit-border-bottom-right-radius:0px;
+			-moz-border-radius-bottomright:0px;
+			border-bottom-right-radius:0px;
+			-webkit-border-bottom-left-radius:0px;
+			-moz-border-radius-bottomleft:0px;
+			border-bottom-left-radius:0px;
+			text-indent:0;
+			border:1px solid #dcdcdc;
+			display:inline-block;
+			color:#777777;
+			font-family:arial;
+			font-weight:bold;
+			font-style:normal;
+			height:3em;
+			line-height:2em;
+			width:7em;
+			text-decoration:none;
+			text-align:center;
+			text-shadow:1px 1px 0px #ffffff;
+			margin-top:1em;
+			cursor:pointer;
+		}
+		.control-btn:hover {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+			background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+			background-color:#dfdfdf;
+		}.control-btn:active {
+			position:relative;
+			top:1px;
+		}
+		
+
+</style>
+
+<script>
+	function topicSort () {};
+	
+	topicSort.init = function () {
+		$("#list").sortable({
+			start: function () {
+				topicSort.resetColors();
+			},
+			stop: function () {
+			}
+		})
+		.disableSelection();
+		$("#checkbtn").click(topicSort.evalResults);	
+	};
+	
+	topicSort.evalResults = function () {
+		var list = document.getElementById("list");
+		var items = list.getElementsByTagName("li");
+		for(var i = 1; i<=items.length; i++) {
+			if(i == items[i-1].value) {
+				$(items[i-1]).addClass("correct");
+			} else {
+				$(items[i-1]).addClass("wrong");
+			}
+		}
+	}
+	
+	topicSort.resetColors = function () {
+		$("li").removeClass("correct").removeClass("wrong");
+	}
+	
+</script>
+<ul id="list">
+	<li value="3">Fragen bzw. Teilthemen überlegen</li>
+    <li value="8">Ausarbeitung</li>
+    <li value="6">Art und Form der Hausarbeit wählen</li>
+    <li value="7">Eine Gliederung entwerfen</li>
+    <li value="2">Die zentrale Frage, d.h. Ihr Erkenntnisinteresse und Ihre Hypothese formulieren</li>
+    <li value="4">Das Thema eingrenzen</li>
+    <li value="5">Nach Literatur suchen, lesen und auswerten</li>
+    <li value="1">Einen ersten Überblick über das Thema verschaffen</li>
+</ul>
+<input type="button" class="control-btn" value="Überprüfen" id="checkbtn"/>
+<script>
+	topicSort.init();
+</script>

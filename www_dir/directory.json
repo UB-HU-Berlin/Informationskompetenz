@@ -1,0 +1,164 @@
+var directory = {
+		
+		0: {
+			"title" : "1. Wie finde ich ein Thema?",
+			"link" : "wieThemaFinden",
+			"color" : "133,47,62", //RGB
+			"subNav" : {
+				0: {
+					"title":"1.1 Themenfindung",
+					"link":"themenfindung"
+				},
+				1: {
+					"title":"1.2 Themenformulierung",
+					"link":"themenformulierung"
+				},
+				2: {
+					"title":"1.3 Zusammenfassung",
+					"link":"zusammenfassung"
+				}
+			}
+		},
+		
+		1 : { 
+			"title" : "2. Welche Arten von Medien brauche ich?", 
+			"link" : "welcheArtenVonMedien",
+			"color" : "235, 106, 57",
+			"subNav" : {
+				0 : {
+					"title" : "2.1 Lexika & Nachschlagewerke",
+					"link" : "lexikaUndNachschlagewerke",
+				}, 
+				1: {
+					"title" : "2.2 Monographien",
+					"link" : "monographien"
+				},
+				2: {
+					"title" : "2.3 Fachzeitschriften & Konferenzberichte",
+					"link" : "fachzeitschriftenUndKonferenzberichte"
+				}, 
+				3: {
+					"title" : "2.4 Zeitungsartikel & Webseiten",
+					"link" : "zeitungsartikelUndWebseiten"
+				},
+				4: {
+					"title" : "2.5 Zusammenfassung",
+					"link" : "zusammenfassung"
+				}
+			}
+		},
+		
+		2 : {
+			"title" : "3. Wo suche ich?",
+			"link" : "woSucheIch",
+			"color": "243,180,98",
+			"subNav" : {
+				0 : {
+					"title" : "3.1 Suche im Internet",
+					"link" : "sucheImInternet",
+				}, 
+				1: {
+					"title" : "3.2 Bibliotheksverbundkataloge",
+					"link" : "bibliotheksverbundkataloge"
+				},
+				2: {
+					"title" : "3.3 Bibliotheken",
+					"link" : "bibliotheken"
+				}, 
+				3: {
+					"title" : "3.4 Datenbanken und Virtuelle Fachbibliotheken",
+					"link" : "datenbanken"
+				},
+				4: {
+					"title" : "3.5 Online-Buchhandel",
+					"link" : "onlinebuchhandel"
+				},
+				5: {
+					"title" : "3.6 Zusammenfassung",
+					"link" : "zusammenfassung"
+				}
+			}
+		} ,
+		
+		3 : {
+			"title" : "4. Wie suche ich?",
+			"link" : "wieSucheIch",
+			"color": "0, 87,109",
+			"subNav" : {
+				0 : {
+					"title" : "4.1 Festlegung von Suchbegriffen",
+					"link" : "festlegungVonSuchbegriffen",
+				}, 
+				1: {
+					"title" : "4.2 Suchen in Online-Katalogen und Datenbanken",
+					"link" : "suchen"
+				},
+				2: {
+					"title" : "4.3 Stichworte und Schlagworte",
+					"link" : "stichworteSchlagworteGame"
+				},
+				3: {
+					"title" : "4.4 Suchstrategien",
+					"link" : "suchstrategien"
+				}, 
+				4: {
+					"title" : "4.5 Zusammenfassung",
+					"link" : "zusammenfassung"
+				}
+			}		
+		},
+		
+		4 : {
+			"title" : "5. Was habe ich gefunden?",
+			"link" : "wasGefunden",
+			"color": "0,156, 159",
+			"subNav" : {
+				0 : {
+					"title" : "5.1 Internetquellen bewerten",
+					"link" : "internetquellen",
+				}, 
+				1: {
+					"title" : "5.2 Trefferlisten bewerten",
+					"link" : "terfferlisten"
+				}, 
+				2: {
+					"title" : "5.3 Zusammenfassung",
+					"link" : "zusammenfassung"
+				}
+			}
+		},
+		
+		5 : {
+			"title" : "6. Wie schreibe ich eine Hausarbeit?",
+			"link" : "hausarbeit",
+			"color": "171,87,107",
+			"subNav" : {
+				0 : {
+					"title":"6.1 Zeitmanagement",
+					"link":"zeitmanagement"
+				},
+				1: {
+					"title":"6.2 In 8 Schritten vom Thema zur Ausarbeitung",
+					"link":"in8schritten"
+				},
+				2: {
+					"title":"6.3 Die 8 Schritte verinnerlicht?",
+					"link":"8schrittegame"
+				},
+				3: {
+					"title": "6.4 Literaturverzeichnis",
+					"link":"literaturverzeichnis"
+				}, 
+				4: {
+					"title":"6.5 Zitieren",
+					"link":"zitieren"
+				},
+				5: {
+					"title":"6.6 Zusammenfassung",
+					"link":"zusammenfassung"
+				}
+			}
+		}, 
+		
+		"glossar": "glossar.html"
+}

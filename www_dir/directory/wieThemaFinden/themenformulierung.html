@@ -1,0 +1,173 @@
+<h2>
+    Themenformulierung
+</h2>
+<p>
+    Das Thema zu definieren ist eine der wichtigsten Aufgaben – hier sollten Sie nichts überstürzen!
+</p>
+<img src="Bilder/01/02_Formulierung.png"/>
+<ul>
+    <li>
+            Analysieren Sie das Thema und verschaffen Sie sich mittels einer ersten Literatursuche einen Überblick über den Inhalt und darüber, ob ausreichend
+            Material zur Verfügung steht.
+    </li>
+    <li>
+            Achten Sie bei der endgültigen Formulierung des Themas auf die Verwendung von Schlüsselbegriffen, die Sie beim Suchen nach Literatur verwenden
+            können.
+	</li>
+</ul>
+
+
+<h3>Der Merkmal-Check für die Themenfindung</h3>
+<p>
+        Überprüfen Sie anhand des folgenden Themas die Merkmale für die Themenformulierung.
+</p>
+
+<p>
+    „Chatten, Posten, Twittern – wird sich das Kommunikationsverhalten im 21. Jahrhundert verändern?“
+</p>
+	
+<p id="answer-text">
+	Wählen Sie die Eigenschaften, die für das Thema Kommunikation über <strong>Chat, Posts und Twitter</strong> zutreffen. Viel Erfolg. 
+</p>
+
+<div class="interactive">
+
+	<script>
+		function merkmal_check () {}
+		
+		merkmal_check.init  = function () {
+			this.set_events();
+		}
+		
+		merkmal_check.set_events = function () {
+			$("label").
+				click(this.check_click)
+				.disableSelection();
+		}
+		
+		merkmal_check.check_click = function (evt) {
+			evt.stopImmediatePropagation();
+			evt.stopPropagation();
+
+			var obj = $(evt.currentTarget);
+			
+			if($(obj).find("input").prop("checked")) {
+				$(obj).find("input").prop("checked",false);
+			} else {
+				$(obj).find("input").prop("checked",true);
+			}
+			
+			$(obj).toggleClass("checked");
+			
+			/**
+			*	Aufgabe gelöst?
+			*/
+			if( $("input:checkbox:checked.correct").length >= 6 && $("input:checkbox:checked").length <= 6 ) {
+				merkmal_check.gameSolved();
+			}
+						
+			return false;
+		}
+		
+		merkmal_check.gameSolved = function () {
+			$("label.wrong").slideUp( 500 );
+			$("label.checked").css({
+				"background-color":"none",
+				"box-shadow":"none"
+			});
+			
+			$("label.checked.correct")
+				.css({
+					"background-color":"none",
+					"border":"none",
+					"cursor":"default",
+					"color":"black"
+				})
+				.unbind()
+				.prepend("<span class='fa fa-check-square-o'>&nbsp;&nbsp;</span>")
+				.removeClass("correct");
+			
+			$("#answer-text").html("<strong class='message'>Richtig!</strong> Dies sind die korrekten Eigenschaften von Kommunikation via Chat, Posts und Twitter:");
+			$("#answer-text strong.message").animate({
+				"color":"black"
+			}, 5000);
+		}
+	</script>
+
+    <style>
+		#answer-text strong.message {
+			color:green;
+		}
+	
+		label.checked {
+			color:white;
+			box-shadow: inset 1px 1px 1px rgba(0,0,0,.4);
+		}
+		
+		label.checked.wrong {
+			text-decoration:line-through;
+			background-color:rgba(255,0,0,.7);
+		}
+		
+		label.checked.correct {
+			background-color: rgba(0,170,0,.6);
+			text-decoration:none;
+			color:white;
+		}
+		
+		label {
+			border: thin rgba(0,0,0,.4) solid;
+			display:block;
+			width:20em;
+			transition:background-color .5s, text-decoration .5s;
+			color:black;
+			padding:.3em .7em;
+			cursor:pointer;
+			box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+		}
+		
+		label input {
+			//margin-right:1em;
+		}
+		
+		input {
+			display:none;
+		}
+		
+		form {
+			margin-bottom:2em;
+		}
+	</style>	
+    
+    <form name="merkmal-check">
+    	<label class="correct">
+        	<input type="checkbox" name="eindeutig" class="merkmal correct" />eindeutig
+        </label>
+        <label class="correct">
+        	<input type="checkbox" name="interesse" class="merkmal correct" />Interesse weckend
+        </label>
+        <label class="wrong">	
+            <input type="checkbox" name="anspruchslos" class="merkmal wrong" />anspruchslos
+        </label>
+        <label class="correct">	
+           <input type="checkbox" name="realisitisch" class="merkmal correct" />realistisch
+        </label>
+        <label class="correct">	
+            <input type="checkbox" name="inhaltlich" class="merkmal correct" />inhaltlich/regional/zeitlich eingegrenzt
+        </label>
+        <label class="correct">	
+            <input type="checkbox" name="nichtkomplex" class="merkmal correct" />nicht zu komplex        
+        </label>
+        <label class="wrong">	
+            <input type="checkbox" name="oberflächlich" class="merkmal wrong" />oberflächlich     
+        </label>
+        <label class="correct">	
+            <input type="checkbox" name="aussagekraeftig" class="merkmal correct" />aussagekräftig    
+        </label>
+    </form>
+    
+	<script>
+		merkmal_check.init();
+	</script>
+
+</div>

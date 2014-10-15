@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!-- jQuery -->
+<script src="jquery.min.js"></script>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="main.css" type="text/css"/>
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css"/>
+
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+
+<meta charset="utf-8">
+<title>Tutorial Informationskompetenz</title>
+
+<script src="StartpageConfig.class.js"></script>
+<script src="Logolist.json"></script>
+<script>
+
+function setStartPageHex () {
+	var conf = new StartpageConfig(); 
+//	console.log(conf.height);
+	conf.printLn(0, ( window.innerHeight * .5 - conf.height /2 ) - StartpageConfig.getScale() * .91 ) ;
+	conf.printLn(0, ( window.innerHeight * .5 - conf.height /2 ), true);
+	conf.printLn(0, ( window.innerHeight * .5 - conf.height /2 ) + StartpageConfig.getScale() * .91 );
+}
+
+function fixBackgroundImage() {
+	$( "#background-img img" ).css({
+		"width": window.innerWidth,
+		"height": window.innerHeight
+	})
+}
+
+function fixFctTiles() {
+
+	$(".center")
+		.html("")
+		.append('<img src="" height="'+StartpageConfig.tileSize+'" />');
+
+	$(".right:eq(0)")
+		.html("")
+		.append('<img src="icons_home/iconhome_medien.png" height="'+StartpageConfig.tileSize+'" />')
+		.click(function(){
+			window.sessionStorage.setItem("currentMenuItem",1);
+			window.sessionStorage.removeItem("currentListItem");
+			window.location = "content.html";
+		})
+
+	$(".right:eq(1)")
+		.html("")
+		.append('<img src="icons_home/iconhome_wo.png" height="'+StartpageConfig.tileSize+'"/>')
+		.click(function(){
+			window.sessionStorage.setItem("currentMenuItem",2);
+			window.sessionStorage.removeItem("currentListItem");
+			window.location = "content.html";
+		});
+
+	$(".right:eq(2)")
+		.html("")
+		.append('<img src="icons_home/iconhome_wie.png" height="'+StartpageConfig.tileSize+'"/>')
+		.click(function(){
+			window.sessionStorage.setItem("currentMenuItem",3);
+			window.sessionStorage.removeItem("currentListItem");
+			window.location = "content.html";			
+		});
+
+	$(".left:eq(0)")
+		.html("")
+		.append('<img src="icons_home/iconhome_thema.png" height="'+StartpageConfig.tileSize+'"/>')
+		.click(function(){
+			window.sessionStorage.setItem("currentMenuItem",0);
+			window.sessionStorage.removeItem("currentListItem");
+			window.location = "content.html";
+		});
+
+	$(".left:eq(1)")
+		.html("")
+		.append('<img src="icons_home/iconhome_hausarbeit.png" height="'+StartpageConfig.tileSize+'" />')
+		.click(function(){
+			window.sessionStorage.setItem("currentMenuItem",5);
+			window.sessionStorage.removeItem("currentListItem");
+			window.location = "content.html";
+		});
+
+	$(".left:eq(2)")
+		.html("")
+		.append('<img src="icons_home/iconhome_was.png" height="'+StartpageConfig.tileSize+'"/>')
+		.click(function(){			
+			window.sessionStorage.setItem("currentMenuItem",4);
+			window.sessionStorage.removeItem("currentListItem");
+			window.location = "content.html";
+		});
+			
+	$(".wabe div")
+		.css({
+			"position":"absolute",
+			"top":"0",
+			"width":"100%",
+			"height":"100%"
+		})
+		
+	$(".left, .right")
+		.on("mouseenter",showDescription)
+		.on("mouseleave",hideDescription);
+
+}
+
+/**
+*	Setzt die Transparenz der Waben, in denen die Kapitelbeschreibungen angezeigt werden, auf 100%. 
+*/
+function fixOpacity() {
+	for(var k = 0; k<3; k++) {
+		index = parseInt($(".wabe.right:eq("+k+")").index()) + 1;
+		$(".wabe:eq("+index+")").css("opacity",1);
+	}
+	for(var j = 0; j<3; j++) {
+		index = parseInt($(".wabe.left:eq("+j+")").index()) + 1;
+		$(".wabe:eq("+index+")").css("opacity",1);
+	}
+}
+
+/**
+*	Blendet die Kapitelbeschreibungen ein, wenn ein Nutzer mit der Maus über eine der Waben geht
+*/
+function showDescription ( evt ) {
+	var originalWabeCounter = function () {
+		var iterations = 0, array;
+		if($(evt.currentTarget).hasClass("right")) {
+			array = document.getElementsByClassName("right");
+			for(var i = 0; i<array.length; i++) {
+				if($(array[i]).index() == $(evt.currentTarget).index()  ) {
+					iterations = i;
+				}
+			}
+			return ++iterations;
+		} else if($(evt.currentTarget).hasClass("left")) {
+			array = document.getElementsByClassName("left");
+			for(var i = 0; i<array.length; i++) {
+				if($(array[i]).index() == $(evt.currentTarget).index()  ) {
+					iterations = i;
+				}
+			}
+			return 6 - iterations ;
+		}
+	}()
+	
+	var targetWabeCounter = parseInt($(evt.currentTarget).index()) + 1;
+	var targetWabe = function () {
+		var wabenArray = document.getElementsByClassName("wabe");
+		var temp;
+		for(key in wabenArray) {
+			try {
+				temp = $(wabenArray[key]).attr("class").split(" ")[1];
+				if(temp == targetWabeCounter) {
+					return wabenArray[key];
+				}
+			} catch (err) {
+				return false;
+			}
+		}
+	}()
+	
+	$(targetWabe).find("div").append("<p id='chapterDescriptionText' ><strong>"+showDescription.directory[originalWabeCounter]+"</strong></p>");
+	
+	$("#chapterDescriptionText").css({
+		"width": StartpageConfig.tileSize / 1.2,
+		"font-size": StartpageConfig.tileSize / 15,
+		"margin-top": StartpageConfig.tileSize / 4,
+		"margin-left": StartpageConfig.tileSize / 12
+	});
+}
+
+/**
+*	Das Vezeichnis, aus dem die Kapitelbeschreibungen gelesen werden.
+*/
+showDescription.directory = {
+	6:	"1 - In diesem Kapitel erfahren Sie, worauf es bei der Themenfindung ankommt und wie Sie ein Thema treffend formulieren können.",
+	1 : "2 - In diesem Kapitel erfahren Sie, ob für Ihr Thema Lexika, Bücher, Webseiten oder Artikel aus Fachzeitschriften geeignet sind.",
+	2: 	"3 - In diesem Kapitel erhalten Sie nützliche Tipps über virtuelle und reale Orte zur Recherche und wann Sie sich an welchen Ort wenden sollten.",
+	3:	"4 - In diesem Kapitel erfahren Sie, wie Sie mittels Online-Katalogen und Datenbanken finden, wonach Sie suchen.",
+	4:	"5 - In diesem Kapitel erfahren Sie, wie Sie eine Internetquelle auf ihre Seriösität prüfen und woran Sie relevante Treffer erkennen.",	
+	5:	"6 - In diesem Kapitel erfahren Sie detailliert, wie Sie für ein bestmögliches Ergebnis beim Schreiben einer Hausarbeit vorgehen sollten."
+}
+
+function hideDescription ( evt ) {
+	$("#chapterDescriptionText").remove();
+}
+
+function fixTitle() {
+	$("#title-wrapper h1").css({
+		"font-size": "5em"
+	});
+	
+	$("#title-line").css({
+		"width": "37em",
+		"height": 2,
+		"margin-top": "1em",
+		"background-color":"white"
+	});
+	
+	var width = $("#title-wrapper").width();
+	
+	$("#title-wrapper").css({
+		"left": (window.innerWidth * .5 ) - (width * .5) ,
+		"top": (window.innerHeight *.02),
+		"position":"absolute"
+	});
+	
+}
+
+function fixSubline() {
+	var width = $("#subline").width();
+	$("#subline p").css({
+		"width":$("#title-wrapper").width()+100
+	});
+}
+
+/**
+*	Diese Funktion wird zum Aufruf der Seite und zu jeder Skalierung ausgeführt.
+*/
+function init() {
+	setStartPageHex();
+	fixBackgroundImage();
+	fixTitle();
+	fixSubline();	
+	fixFctTiles();
+	fixLogo();
+	fixOpacity();
+	fixLinks();
+}
+
+function fixLinks () {
+	$("a.mail-link").on("click", function( evt ){
+		evt.stopImmediatePropagation();
+		evt.preventDefault();
+		window.location.href = evt.target;
+		return false;
+	});	
+}
+
+function fixLogo () {
+	var query = window.location.search, array;
+	if(query.indexOf("accesspoint") > -1 && query.lastIndexOf("?") < query.indexOf("accesspoint") && query.indexOf("=") > -1 ) {
+		query = query.slice(query.indexOf("accesspoint"),query.length);
+		array = query.split("=");
+		if(array[1].indexOf("&") > -1) array[1] = array[1].slice(0, array[1].indexOf("&")) 
+		if(array[1].length > 0) {
+			window.sessionStorage.setItem("accesspoint", array[1]);
+		} else {
+			window.sessionStorage.setItem("accesspoint",0);
+		}
+	} else {
+		window.sessionStorage.setItem("accesspoint",0);
+	}
+
+	if(query.indexOf("accesspoint") > -1) {
+		$(".center img").attr("src",Logolist.path + Logolist[window.sessionStorage.getItem("accesspoint")].start) 
+	} else {
+		$(".center img").attr("src","center.svg");		
+		window.sessionStorage.setItem("accesspoint",false);
+	}
+}
+
+$( document ).ready( function () {
+	init();
+});
+
+$( window ).resize ( function () {
+	$( "#content" ).html("");
+	init();
+});
+
+<!-- Funktionen, die das Impressum / Feedback ein- und ausblendet -->
+function ImpressumAnzeigen () {	
+	$('#impressum').fadeIn();
+}
+function ImpressumAusblenden () {	
+	$('#impressum').fadeOut();
+}
+
+function feedbackAnzeigen () {	
+	$('#feedback').fadeIn();
+}
+function feedbackAusblenden () {	
+	$('#feedback').fadeOut();
+}
+
+</script>
+</head>
+
+<body>
+    <img src="logos/Logos_2_hu_circ.png" id="wabe" class="asset"/>
+    
+    <div id="content-wrapper">
+    	
+		<div id="title-wrapper">
+        	<h1>WILLKOMMEN</h1>
+           	<div id="title-line"></div>
+        </div>
+        
+    	<div id="background-img">
+        	<img src="bg.jpg" >
+        </div>
+        <div id="content">
+
+        </div>
+        <div id="subline">
+           <p>
+            	Sind Sie Schülerin/Schüler oder Studierende/r  in Berlin oder Brandenburg 
+                <br /> und müssen eine Hausarbeit schreiben, ein Referat halten oder<br/> Ihre fünfte Prüfungskomponente vorbereiten?
+               	<br />–– Dann sind Sie hier richtig!
+            </p>
+			<!-- Link für Impressum in einem Popup -->
+			
+            <p class="linkImpressum">
+			</p>
+            <br/>
+            <p>
+            <hr class="dropshadow"/>
+            	<span class="small">  <a href="#" onclick="ImpressumAnzeigen();">Impressum</a> | <a href="#" onclick="feedbackAnzeigen();">Feedback</a>  </span>
+            </p>
+        </div>
+	</div>
+	
+<div id="impressum">	
+    <div id="impressum-overlay"> 
+		<div id="impressum-content">
+			<a href="#" onclick="ImpressumAusblenden();"><span id="schliessen" class="fa fa-times"></span></a>
+
+            <h2>HERAUSGEBER</h2>
+            
+            <p> 
+            	Hochschule der Medien Stuttgart (HdM)
+                <br/> Studiengang Bibliotheks- und Informationsmanagement /
+                <br/> Studiengang Informationsdesign
+                <br/> Nobelstraße 10
+                <br/> 70569 Stuttgart
+            </p>
+            <p>
+             	in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks 
+           	 	Informationskompetenz Berlin/Brandenburg (NIK-BB)
+                <ul>
+           			<li> Humboldt-Universität zu Berlin, Universitätsbibliothek</li>
+                    <li> Freie Universität Berlin, Universitätsbibliothek und Philologische Bibliothek</li>
+                    <li> Technische Universität Berlin, Universitätsbibliothek</li>
+                    <li> Staatsbibliothek zu Berlin, Preussischer Kulturbesitz</li>
+                    <li> Zentral- und Landesbibliothek Berlin</li>
+                    <li> Universität Potsdam, Universitätsbibliothek</li>
+                    <li> Fachhochschule Potsdam, Bibliothek</li>
+                    <li> Stadt-und Landesbibliothek im Bildungsforum Potsdam</li>
+                </ul>    
+            </p>
+            
+            <h3> Verantwortlich </h3>
+            
+            <p>
+            	<strong> Carla Freise </strong>
+            	<br/> Freie Universität Berlin, Philologische Bibliothek
+            	<br/> E-Mail: <a href="mailto:carla.freise@fu-berlin.de">carla.freise@fu-berlin.de</a>
+            </p>
+            <p>
+            	<strong> Ronald Gohr </strong>
+            	<br/>Stadt-und Landesbibliothek im Bildungsforum Potsdam
+            	<br/>E-Mail: <a href="mailto:gohr@bibliothek.potsdam.de">gohr@bibliothek.potsdam.de</a>
+            </p>
+            <p>
+            	<strong> Prof. Dr. Roland Mangold </strong>
+            	<br/>Professor für Informations- und Kommunikationspsychologie
+            	<br/>E-Mail: <a href="mailto:mangold@hdm-stuttgart.de">mangold@hdm-stuttgart.de</a> 
+            </p>
+            <p>
+              	<strong> Ute Mousa </strong>
+            	<br/>Humboldt-Universität zu Berlin, Universitätsbibliothek
+            	<br/>E-Mail: <a href="mailto:ute.mousa@hu-berlin.de">ute.mousa@hu-berlin.de</a>
+            </p>
+            <p>
+            	<strong> Marion Pohl </strong>
+            	<br/>Freie Universität Berlin, Universitätsbibliothek
+            	<br/>E-Mail: <a href="mailto:pohl@ub.fu-berlin.de">pohl@ub.fu-berlin.de</a>
+            </p>
+            <p>
+            	<strong> Prof. Ingeborg Simon </strong>
+           		<br/>Professorin für Informationsdienstleistungen und Teaching Library
+           		<br/>E-Mail: <a href="smailto:simon@hdm-stuttgart.de">simon@hdm-stuttgart.de</a> 
+            </p>
+            <p>
+            	<strong> Armin Talke </strong>
+            	<br/>Staatsbibliothek zu Berlin, Preußischer Kulturbesitz
+           		<br/>E-Mail: <a href="mailto:Armin.Talke@sbb.spk-berlin.de">Armin.Talke@sbb.spk-berlin.de</a>
+            </p>
+            <p>
+            	<strong> Jana Viehweger </strong>
+            	<br/>Zentral-und Landesbibliothek Berlin
+            	<br/>E-Mail: <a href="mailto:viehweger@zlb.de">viehweger@zlb.de</a>
+            </p>
+            <p>
+            	<strong> Katharina Violet </strong>
+            	<br/>Fachschule Potsdam, Bibliothek
+           		<br/>E-Mail: <a href="mailto:violet@fh-potsdam.de">violet@fh-potsdam.de</a>
+            </p>
+            <p>
+            	<strong> Kathrin Agethen </strong>
+            	<br/>Universität Potsdam, Universitätsbibliothek
+            	<br/>E-Mail: <a href="mailto:infonp3@uni-potsdam.de">infonp3@uni-potsdam.de</a> 
+            </p>
+           
+           	<h3>Konzeption</h3>
+            <p>
+                Netzwerk Informationskompetenz Berlin/Brandenburg (NIK-BB), 
+                <br/> Arbeitsgruppe Schüler in Zusammenarbeit mit den  Studiengängen 
+                <br/> Bibliotheks- und Informationsmanagement und Informationsdesign, 
+                <br/> Hochschule der Medien Stuttgart (HdM)
+            </p>
+
+            <h3>Texte</h3>
+
+            <p>
+                Nicole Dobner, Jana Eckert, Vera Gaugel, Marie-Luise Hammer, Julia 
+                Gabriele Hillesheim, Alina Hirschfeld, Maria Klimm, Franziska Helgard 
+                Tschofen, Lisa Wiedenhöfer
+            </p>
+            
+            <h3>Gestaltung und Umsetzung</h3>
+            <p>
+            	Ann-Kathrin Bauer, Christiane Knöpfler, Larissa Fischinger, Merle 
+            	Giebeler, Patrick Lang, Rania Nabie, Sandra Leber, Stefanie Dworschak, 
+            	Toni Georg Michel, Vera Wagner
+            </p>
+            
+            <h3>Verwendung durch Dritte</h3>
+            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Dieses Tutorial</span> ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0 International Lizenz</a>.</p>
+             
+             <h3>Haftungsausschluss</h3>
+			<p class="klein">
+				<strong>1. Inhalt des Onlineangebotes</strong><br/>
+				Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.
+				Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+				</p>
+			<p class="klein">
+				<strong>2. Verweise und Links</strong><br/>
+				Bei direkten oder indirekten Verweisen auf fremde Internetseiten ("Links"), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern.
+				Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der gelinkten/verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich hiermit ausdrücklich von allen Inhalten aller verlinkten /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor eingerichteten Gästebüchern, Diskussionsforen und Mailinglisten. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige Veröffentlichung lediglich verweist.
+			</p>
+			<p class="klein">
+				<strong>3. Urheber- und Kennzeichenrecht</strong><br/>
+				Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen.
+				Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluß zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind! <!-- Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet. -->
+			</p>
+			<p class="klein">
+				<strong>4. Rechtswirksamkeit dieses Haftungsausschlusses</strong><br/>
+				Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.
+			</p>
+
+            <hr/>
+			<p><strong>Sommer 2014</strong></p>
+            <hr/>
+            			
+		</div>
+	</div>
+</div>	
+
+<div id="feedback">	
+    <div id="feedback-overlay"> 
+		<div id="feedback-content">
+			<a href="#" onclick="feedbackAusblenden();"><span id="schliessen" class="fa fa-times"></span></a>
+			<h2>Feedback</h2>
+            <p>
+            	Senden Sie uns Ihr Feedback mit dem Betreff Tutorial bitte an <a href="mailto:info@ub.hu-berlin.de?subject=Tutorial">info@ub.hu-berlin.de</a>. 
+            </p>
+            <p>
+            	<strong>Vielen Dank!</strong>
+            </p>
+		</div>
+	</div>
+</div>	
+
+</body>
+</html>

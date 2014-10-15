@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+    <!-- Stylesheets -->
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+	<link href="popup.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Font Awesome -->
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    
+    
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,300' rel='stylesheet' type='text/css'>
+	<title>Tutorial Informationskompetenz</title>
+    
+	<!-- jQuery -->
+	<script src="jquery.min.js"></script>    
+	<script src="jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+      
+    <!-- Klassen -->
+    <script src="classes/Main_Menu.class.js"></script>
+    <script src="classes/Wabe.class.js"></script>
+    <script src="classes/Content.class.js"></script>
+    <script src="classes/Popup.class.js"></script>
+    <script src="classes/ImageCtrl.class.js"></script>
+    <script src="classes/Glossar.class.js"></script>
+    <script src="classes/Checknavi.class.js"></script>
+
+	<!-- Inhaltsverzeichnis -->
+	<script src="directory.json"></script>
+	<script src="Logolist.json"></script>
+    
+    <!-- Initialisierung der Seite -->
+    <script>
+		var main_menu;
+		$( document ).ready( function () {
+			/**
+			*	Hauptmenü wird initialisiert
+			*	Timeout um einen Bug zu verhindern, in dem der Browser zu früh
+			* 	document.ready aktiviert 
+			*/ 
+			setTimeout(function(){
+				main_menu = new Main_Menu();
+			},500);
+			
+		});
+	</script>
+    
+</head>
+
+<body>
+	<!-- Komplette Site mit Hintergrundbild -->
+	<div id="mainwrapper"> 
+		<!-- Wabenmenü + Kapitelmenü + Submenüs -->
+		<div id="menu">
+			<nav>
+				<!-- hier kommt das Wabenmenü rein -->
+				<div id="navisite">
+					<!-- Waben -->
+				</div>
+				
+				<!-- große, aktive Wabe -->
+				<div class="wabeactive">
+					<img width="160" id="menu-wabe-active" src="Bilder/wabe_clear.png" />
+				</div>	
+				
+				<!-- Kapitelüberschrift über dem Naviblock -->
+				<div class="navititle">
+					<!--Wo suche ich?-->
+				</div>
+				
+				<!-- Kapitelmenü -->				
+				<ul class="navichapter">
+
+				</ul>
+			</nav>
+		</div>	
+		
+		<!-- Überschrift, Logo und Breadcrumb-Zeile -->	
+		<div id="header">
+			<div id="logo">
+				<img width="100" src="Bilder/wabe_clear.png" /> 
+			</div>
+			<div class="chaptertitle">
+				<h1>
+				</h1>
+			</div>
+			<div class="breadcrumb">
+			</div>		
+		</div>
+		
+		<!-- Inhalte -->
+		<div id="contentwrapper"> 
+            <div class="subtitle">
+                <h3><!--Unterthema--></h3>
+            </div>
+			<div class="content">
+				<div class="import">
+                </div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html> 
