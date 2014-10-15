@@ -47,13 +47,12 @@ Stadt-und Landesbibliothek im Bildungsforum Potsdam
 
 Verantwortlich
 --------------
-*   Carla Freise
-    Freie Universität Berlin, Philologische Bibliothek
-    E-Mail: carla.freise@fu-berlin.de
-
-Ronald Gohr 
-Stadt-und Landesbibliothek im Bildungsforum Potsdam 
-E-Mail: gohr@bibliothek.potsdam.de
+*	Carla Freise
+	Freie Universität Berlin, Philologische Bibliothek
+	E-Mail: carla.freise@fu-berlin.de
+*	Ronald Gohr
+	Stadt-und Landesbibliothek im Bildungsforum Potsdam
+	E-Mail: gohr@bibliothek.potsdam.de
 
 Prof. Dr. Roland Mangold 
 Professor für Informations- und Kommunikationspsychologie 
