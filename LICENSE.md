@@ -47,9 +47,9 @@ Stadt-und Landesbibliothek im Bildungsforum Potsdam
 
 Verantwortlich
 --------------
-Carla Freise 
-Freie Universität Berlin, Philologische Bibliothek 
-E-Mail: carla.freise@fu-berlin.de
+* Carla Freise 
+  Freie Universität Berlin, Philologische Bibliothek 
+  E-Mail: carla.freise@fu-berlin.de
 
 Ronald Gohr 
 Stadt-und Landesbibliothek im Bildungsforum Potsdam 
