@@ -31,5 +31,9 @@ var Logolist = {
   7: {
     "start": "Logos_2_UP_circ.png",
     "content": "Logos_2_UP.png"
+  },
+  8: {
+    "start": "Logos_2_FHBRB_circ.png",
+    "content": "Logos_2_FHBRB.png"
   }
 };
