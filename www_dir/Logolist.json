@@ -1,32 +1,32 @@
 var Logolist = {
-	"path": "logos/",
-	0: {
-		"start":"Logos_2_hu_circ.png",
-		"content":"Logos_2_hu.png"
-	},
-	1: {
-		"start":"Logos_2_slb_circ.png",
-		"content":"Logos_2_slb.png"
-	},
-	2: {
-		"start":"Logos_2_staatsbib_circ.png",
-		"content":"Logos_2_staatsbib.png"
-	},
-	3: {
-		"start":"Logos_2_tu_circ.png",
-		"content":"Logos_2_tu.png"
-	},
-	4: {
-		"start":"Logos_2_tubib_circ.png",
-		"content":"Logos_2_tubib.png"
-	},
-	5: {
-		"start":"Logos_2_FHP_circ.png",
-		"content":"Logos_2_FHP.png"
-	},
-	6: {
-	   "start": "Logos_2_ZLB_circ.png",
-	   "content": "Logos_2_ZLB.png"
+  "path": "logos/",
+  0: {
+    "start": "Logos_2_hu_circ.png",
+    "content": "Logos_2_hu.png"
+  },
+  1: {
+    "start": "Logos_2_slb_circ.png",
+    "content": "Logos_2_slb.png"
+  },
+  2: {
+    "start": "Logos_2_staatsbib_circ.png",
+    "content": "Logos_2_staatsbib.png"
+  },
+  3: {
+    "start": "Logos_2_tu_circ.png",
+    "content": "Logos_2_tu.png"
+  },
+  4: {
+    "start": "Logos_2_tubib_circ.png",
+    "content": "Logos_2_tubib.png"
+  },
+  5: {
+    "start": "Logos_2_FHP_circ.png",
+    "content": "Logos_2_FHP.png"
+  },
+  6: {
+    "start": "Logos_2_ZLB_circ.png",
+    "content": "Logos_2_ZLB.png"
   },
   7: {
     "start": "Logos_2_UP_circ.png",
@@ -35,5 +35,9 @@ var Logolist = {
   8: {
     "start": "Logos_2_FHBRB_circ.png",
     "content": "Logos_2_FHBRB.png"
+  },
+  9: {
+    "start": "Logos_2_LetteVerein_circ.png",
+    "content": "Logos_2_LetteVerein.png"
   }
 };
