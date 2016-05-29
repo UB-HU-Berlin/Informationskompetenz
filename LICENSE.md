@@ -1,10 +1,10 @@
 # LICENSE
 
-![CC 4.0](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.png)
+![CC BY-NC 4.0](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)
 
-This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
 
-This work is licensed under the Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+Dieses Werk ist lizenziert unter einer [Creative Commons Namensnennung-Nicht kommerziell 4.0 International Lizenz](http://creativecommons.org/licenses/by-nc/4.0/).
 
 # Haftungsausschluss
 
@@ -42,6 +42,18 @@ in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompe
 
 ## Verantwortlich
 
+- **Kathrin Agethen**
+
+      Universität Potsdam, Universitätsbibliothek 
+
+      E-Mail: infonp3@uni-potsdam.de
+
+- **Ute Arnold**
+
+      Humboldt-Universität zu Berlin, Universitätsbibliothek 
+
+      E-Mail: ute.arnold@ub.hu-berlin.de
+
 - **Carla Freise**
 
     Freie Universität Berlin, Philologische Bibliothek
@@ -59,12 +71,6 @@ in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompe
       Professor für Informations- und Kommunikationspsychologie 
 
       E-Mail: mangold@hdm-stuttgart.de
-
-- **Ute Mousa**
-
-      Humboldt-Universität zu Berlin, Universitätsbibliothek 
-
-      E-Mail: ute.mousa@hu-berlin.de
 
 - **Marion Pohl**
 
@@ -95,12 +101,6 @@ in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompe
       Fachschule Potsdam, Bibliothek 
 
       E-Mail: violet@fh-potsdam.de
-
-- **Kathrin Agethen**
-
-      Universität Potsdam, Universitätsbibliothek 
-
-      E-Mail: infonp3@uni-potsdam.de
 
 ### Konzeption
 

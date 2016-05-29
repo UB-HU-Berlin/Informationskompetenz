@@ -1,4 +1,19 @@
 # Changes
+## 2016-05-25
+- Lizenz-Information geändert
+    - Sortierung der Personen
+    - Namensänderung Fr. Mousa = Fr. Arnold
+    - Lizenz-Typ geändert von CC BY-NC-ND 4.0 zu CC BY-NC 4.0
+- Impressum angepasst
+    - Sortierung der Personen
+    - Namensänderung Fr. Mousa = Fr. Arnold
+    - Lizenz-Typ geändert von CC BY-NC-ND 4.0 zu CC BY-NC 4.0
+- 3 "Wo suche ich"
+    - 3.2 Bibliotheksverbundkataloge - neues KOBV-Portal verlinkt
+    - 3.4 Datenbanken und Virtuelle Fachbibliotheken
+        - BAM-Portal gegen Deutsche digitale Bibliothek ausgetauscht
+        - VifaPol wurde gegen GEO-LEO ausgetauscht
+
 ## 2015-01-06
 - Hinzufügen des Logos des Lette Vereins als Accesspoint 9
 - Tag 2.1.2
