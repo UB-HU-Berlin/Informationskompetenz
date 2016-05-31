@@ -1,4 +1,10 @@
 # Changes
+
+## 2016-05-30
+- Sortierung der Personen geänder in
+    - Lizenz-Information [LICENSE.md](https://github.com/UB-HU-Berlin/Informationskompetenz/blob/master/LICENSE.md)
+    - [Impressum](https://github.com/UB-HU-Berlin/Informationskompetenz/blob/master/www_dir/index.html)
+
 ## 2016-05-25
 - Lizenz-Information geändert
     - Sortierung der Personen

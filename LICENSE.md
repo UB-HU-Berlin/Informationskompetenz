@@ -42,12 +42,6 @@ in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompe
 
 ## Verantwortlich
 
-- **Kathrin Agethen**
-
-      Universität Potsdam, Universitätsbibliothek 
-
-      E-Mail: infonp3@uni-potsdam.de
-
 - **Ute Arnold**
 
       Humboldt-Universität zu Berlin, Universitätsbibliothek 
@@ -101,6 +95,12 @@ in Zusammenarbeit mit den folgenden Bibliotheken des Netzwerks Informationskompe
       Fachschule Potsdam, Bibliothek 
 
       E-Mail: violet@fh-potsdam.de
+
+- **Kathrin Agethen**
+
+      Universität Potsdam, Universitätsbibliothek 
+
+      E-Mail: infonp3@uni-potsdam.de
 
 ### Konzeption
 
