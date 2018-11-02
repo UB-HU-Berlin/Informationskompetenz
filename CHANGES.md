@@ -1,5 +1,10 @@
 # Changes
 
+## 2018-11-02
+- Links korrigiert
+    - 3. Wo suche ich? - Bibliotheken
+    - 4. Wie suche ich? - Festlegung von Suchbegriffen: hilfreiche Webadressen
+
 ## 2016-05-30
 - Sortierung der Personen geänder in
     - Lizenz-Information [LICENSE.md](https://github.com/UB-HU-Berlin/Informationskompetenz/blob/master/LICENSE.md)
