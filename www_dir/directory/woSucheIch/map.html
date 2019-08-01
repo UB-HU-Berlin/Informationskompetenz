@@ -5,24 +5,24 @@
 	<meta charset="UTF-8">
 	<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="mapstyles.css" rel="stylesheet" type="text/css" media="screen" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,300' rel='stylesheet' type='text/css'>
+	<link href="//fonts.googleapis.com/css?family=Roboto:400,100,700,300" rel="stylesheet" type="text/css">
 	<title>Tutorial Informationskompetenz</title>
 	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="jquery.svganim.min.js"></script>
 	<script type="text/javascript">
 	
-		<!-- Funktion, die Pins einer Farbe ein- und ausblendet und das entsprechende Menü auf- und zuklappt -->
+		// <!-- Funktion, die Pins einer Farbe ein- und ausblendet und das entsprechende Menü auf- und zuklappt -->
 		var pinsAktiv;
 		var menuAktiv;
 		function PinsAnzeigen (pinsID, menuID) {	
-			<!-- liste zuklappen, wenn Link 2x geklickt wird-->
+			// <!-- liste zuklappen, wenn Link 2x geklickt wird-->
 			if (pinsID == pinsAktiv) {
 				$(pinsAktiv).fadeOut();
 				$(menuAktiv).slideUp();
 				pinsAktiv = "";
 				menuAktiv = "";
 			}
-			<!-- aktive liste zuklappen, geklickte aufklappen-->
+			// <!-- aktive liste zuklappen, geklickte aufklappen-->
 			else {
 				$(pinsAktiv).fadeOut();
 				$(menuAktiv).slideUp();
@@ -33,7 +33,7 @@
 			}
 		}
 		
-		<!-- Funktion zum Hervorheben einzelner Pins -->
+		// <!-- Funktion zum Hervorheben einzelner Pins -->
 		function HighlightPin (pinID) {
 			$(pinID).animate({svgTransform: 'skewY(-1)'}, 200);
 			$(pinID).animate({svgTransform: 'skewY(0)'}, 200);
@@ -159,7 +159,7 @@
 	</div>
 	<div> 
 		<svg version="1.1" id="Bibliothekskarte" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-			 width="40em" viewBox="0 0 438.667 459.333" style="enable-background:new 0 0 438.667 459.333;"
+			 width="40em" viewbox="0 0 438.667 459.333" style="enable-background:new 0 0 438.667 459.333;"
 			 xml:space="preserve">
 			 
 			<g id="karte">
