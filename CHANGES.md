@@ -1,5 +1,10 @@
 # Changes
 
+## 2019-08-01 / v2.3
+- Markup korrigiert
+- Einbindung externer Quellen (CSS, js, Fonts) nun wahlweise via https oder http möglich
+- Textergänzung in directory/hausarbeit/zitieren.html
+
 ## 2018-11-02
 - Links korrigiert
     - "3. Wo suche ich?" - Bibliotheken
