@@ -1,5 +1,8 @@
 # Changes
 
+- update URL ViFa Sportwissenschaft
+
+---
 ## 2019-08-01 / v2.3
 - Markup korrigiert
 - Einbindung externer Quellen (CSS, js, Fonts) nun wahlweise via https oder http möglich
