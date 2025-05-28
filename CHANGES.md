@@ -1,5 +1,10 @@
 # Changes
 
+- Links in Abschnitt 3 korrigiert
+- DBIS Screenshot in Abschnitt 3 aktualisiert
+- Link zu semager.de in Abschnitt 4 entfernt
+
+---
 ## 2025-03-12 / v2.4
 - update URL ViFa Sportwissenschaft
 
