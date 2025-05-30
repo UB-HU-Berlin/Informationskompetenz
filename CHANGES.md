@@ -10,6 +10,7 @@
 - add `.nvmrc` & `package.json`
 - replace online Roboto font with self-hosted 
 - fix syntax issues
+- migrate to jQuery v3.7.1 & jQueryUI v1.14.1
 
 ---
 ## 2025-03-12 / v2.4
