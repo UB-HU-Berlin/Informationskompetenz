@@ -1,8 +1,8 @@
-e/* Farben
+/* Farben
 orange: #eb6b39
 hellorange: #f3b462
 blau: #00576d
-türkis: #039d9f
+tÃ¼rkis: #039d9f
 hellrot: #ac586b
 braun: #5d2c3e 
  */
@@ -88,9 +88,9 @@ nav a {
 	text-decoration:none !important;
 }
 
-.haken {
+/* .haken {
 
-}
+} */
 
 .menu-wabe {
 	cursor:pointer;
@@ -156,7 +156,7 @@ nav a {
 	margin-left:10em;
 	line-height:2.4em;
 	max-width:40em;
-	//text-decoration:underline;
+	/* text-decoration:underline; */
 	font-size:.8em;
 }
 
@@ -166,8 +166,8 @@ nav a {
 
 .content {
 	height: 80%;
-	//float: right;
-		/* oben rechts unten links */
+	/* float: right; */
+	/* oben rechts unten links */
 	margin: 7.5em 0em 0em 8em;
 	padding-right: 2em;
 	overflow: auto;
@@ -258,15 +258,15 @@ table.regular td{
 	margin-left:1em;
 }
 
-/* Fügt einen weißen Hintergrund hinzu */
+/* Fï¿½gt einen weiï¿½en Hintergrund hinzu */
 white-back {
 	background-color:white;
 }
 
 /* Contents aus den Texten der IDler */
-.import {
+/* .import {
 
-}
+} */
 
 .next {
 	height: 100%;
@@ -308,20 +308,20 @@ h2 {
 
 a:link {
 	color: #555554;
-	//text-decoration:none;
+	/* text-decoration:none; */
 	transition: background-color 0.4s;
 }
 a:visited {
 	color: #555554;
-	//text-decoration: none;
+	/* text-decoration: none; */
 }
 a:active {
 	color: #555554;
-	//text-decoration: none;
+	/* text-decoration: none; */
 }
 a:hover {
 	color: #000;
-	//text-decoration: none;
+	/* text-decoration: none; */
 	background-color: rgba(255,255,255,0.7);
 	transition: background-color 0.4s;
 }

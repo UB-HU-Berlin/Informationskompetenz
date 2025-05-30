@@ -3,6 +3,13 @@
 - Links in Abschnitt 3 korrigiert
 - DBIS Screenshot in Abschnitt 3 aktualisiert
 - Link zu semager.de in Abschnitt 4 entfernt
+- Listing der ViFas ersetzt mit DBIS-ViFa-Liste
+- Screenshots replaced
+  - ViFa Sport
+  - Zeit Online
+- add `.nvmrc` & `package.json`
+- replace online Roboto font with self-hosted 
+- fix syntax issues
 
 ---
 ## 2025-03-12 / v2.4
