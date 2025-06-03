@@ -1,5 +1,6 @@
 # Changes
 
+## 2025-06-05 / v2.5
 - Links in Abschnitt 3 korrigiert
 - DBIS Screenshot in Abschnitt 3 aktualisiert
 - Link zu semager.de in Abschnitt 4 entfernt
